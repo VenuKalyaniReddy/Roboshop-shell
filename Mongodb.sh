@@ -27,17 +27,17 @@ else
 
 if [ $ID -ne 0 ]
 
-  then 
-  echo -e  "$R ERROR :: Please run this script with root access $N"
+then 
+    echo -e  "$R ERROR :: Please run this script with root access $N"
 
-  exit 1
+    exit 1
 
 else 
-  echo "you are root User"
+    echo "you are root User"
 
 fi
 
-cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo
+cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 
 VALIDATE $? "copied MongoDB Repo"
 
